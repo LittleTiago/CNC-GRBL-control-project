@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "test_cnc",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "test_cnc::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_cnc-Debug-562899283c65015706f1.json",
+					"name" : "test_cnc",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_cnc_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_cnc_autogen-Debug-a4f6d1f2e7f0eb8aa79e.json",
+					"name" : "test_cnc_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_cnc_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_cnc_autogen_timestamp_deps-Debug-f774636118104020ea4f.json",
+					"name" : "test_cnc_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/openscience/\u00c1rea de trabalho/Microscopio_2026/codigos/test_cnc/build",
+		"source" : "/home/openscience/\u00c1rea de trabalho/Microscopio_2026/codigos/test_cnc"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
