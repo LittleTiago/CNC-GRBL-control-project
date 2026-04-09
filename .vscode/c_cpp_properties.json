@@ -2,16 +2,26 @@
     "configurations": [
         {
             "name": "Linux",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/usr/include/x86_64-linux-gnu/qt5/QtCore"
+                "/usr/include/x86_64-linux-gnu/qt5",
+                "/usr/include/x86_64-linux-gnu/qt5/QtCore",
+                "/usr/include/x86_64-linux-gnu/qt5/QtSerialPort"
             ],
+            "browse": {
+                "path": [
+                    "${workspaceFolder}",
+                    "/usr/include/x86_64-linux-gnu/qt5",
+                    "/usr/include/x86_64-linux-gnu/qt5/QtCore",
+                    "/usr/include/x86_64-linux-gnu/qt5/QtSerialPort"
+                ]
+            },
             "defines": [],
-            "compilerPath": "/usr/bin/gcc",
+            "compilerPath": "/usr/bin/c++",
             "cStandard": "c17",
             "cppStandard": "gnu++17",
-            "intelliSenseMode": "linux-gcc-x64",
-            "configurationProvider": "ms-vscode.cmake-tools"
+            "intelliSenseMode": "linux-gcc-x64"
         }
     ],
     "version": 4
