@@ -1,5 +1,0 @@
-/home/openscience/Área de trabalho/Microscopio_2026/codigos/test_cnc/build/CMakeFiles/test_cnc.dir
-/home/openscience/Área de trabalho/Microscopio_2026/codigos/test_cnc/build/CMakeFiles/edit_cache.dir
-/home/openscience/Área de trabalho/Microscopio_2026/codigos/test_cnc/build/CMakeFiles/rebuild_cache.dir
-/home/openscience/Área de trabalho/Microscopio_2026/codigos/test_cnc/build/CMakeFiles/test_cnc_autogen_timestamp_deps.dir
-/home/openscience/Área de trabalho/Microscopio_2026/codigos/test_cnc/build/CMakeFiles/test_cnc_autogen.dir

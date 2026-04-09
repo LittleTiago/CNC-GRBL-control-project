@@ -1,0 +1,36 @@
+# Build directories
+build/
+cmake_build/
+
+# Generated files
+*.o
+*.obj
+*.so
+*.a
+*.lib
+*.exe
+*.dll
+
+# Qt generated files
+moc_*.cpp
+*.moc.cpp
+qrc_*.cpp
+ui_*.h
+
+# CMake cache
+CMakeCache.txt
+CMakeUserPresets.json
+
+# IDE files
+.vscode/c_cpp_properties.json
+.vscode/launch.json
+.vscode/tasks.json
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS files
+.DS_Store
+Thumbs.db
