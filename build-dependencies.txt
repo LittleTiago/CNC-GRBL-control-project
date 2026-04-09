@@ -1,0 +1,7 @@
+# Dependências de sistema necessárias para compilar o projeto CNC-GRBL-control-project
+# Usar em sistemas Debian/Ubuntu.
+cmake
+build-essential
+qtbase5-dev
+qtbase5-dev-tools
+libqt5serialport5-dev
