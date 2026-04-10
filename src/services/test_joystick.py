@@ -19,7 +19,7 @@ def main():
     sys.stderr.write("Pressione ESC para sair.\n")
     sys.stderr.flush()
     
-    step = 5.0 
+    step = 0.2
 
     while True:
         key = get_key()

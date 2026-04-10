@@ -13,9 +13,9 @@ namespace CncConfig {
     const double Z_MAX = 2.0;
     
     /** @brief Limite mínimo no eixo X em milímetros. */
-    const double X_MIN = -232.0;
+    const double X_MIN = -200.0;
     /** @brief Limite mínimo no eixo Y em milímetros. */
-    const double Y_MIN = -162.0;
+    const double Y_MIN = -160.0;
     /** @brief Limite mínimo no eixo Z em milímetros. */
     const double Z_MIN = -18.0;
 

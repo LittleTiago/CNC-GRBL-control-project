@@ -102,20 +102,21 @@ CommandResult CncService::moveRelative(double dx, double dy, double dz) {
     /* *********** Validações antes do Envio ************ */
     if (!m_serial.isOpen()) return CommandResult::Disconnected;
     if (m_currentState == MachineState::Alarm) return CommandResult::MachineAlarmed;
-    if (m_currentState != MachineState::Idle) {
-        addToLog("G91...", "Rejeitado: Máquina Ocupada", CommandResult::MachineBusy);
-        return CommandResult::MachineBusy;
-    }
 
-    // Calcula posição futura baseada no feedback em tempo real
-    double targetX = m_posX + dx;
-    double targetY = m_posY + dy;
-    double targetZ = m_posZ + dz;
+    // Calcula posição futura baseada na posição prevista
+    double targetX = m_targetX + dx;
+    double targetY = m_targetY + dy;
+    double targetZ = m_targetZ + dz;
 
     if (!checkLimits(targetX, targetY, targetZ)) {
         addToLog(QString("G91 X%1...").arg(dx), "Bloqueado: Fora dos limites", CommandResult::OutOfSoftLimits);
         return CommandResult::OutOfSoftLimits;
     }
+
+    // Atualiza as posições previstas
+    m_targetX = targetX;
+    m_targetY = targetY;
+    m_targetZ = targetZ;
 
     /* ************ Envio do Comando Relativo *************************** */
     QString cmd = QString("G91 G1 X%1 Y%2 Z%3 F%4\r\n")
@@ -143,6 +144,12 @@ CommandResult CncService::executeHoming() {
 
     m_serial.write("$H\r\n");
     addToLog("$H", "Iniciando Ciclo de Homing", CommandResult::Success);
+    
+    // Após homing, as posições previstas são resetadas para origem
+    m_targetX = 0.0;
+    m_targetY = 0.0;
+    m_targetZ = 0.0;
+    
     return CommandResult::Success;
 }
 
@@ -223,6 +230,11 @@ void CncService::parseStatusString(const QString &status) {
                 m_posY = coords[1].toDouble();
                 m_posZ = coords[2].toDouble();
                 emit positionChanged(m_posX, m_posY, m_posZ);
+                
+                // Sincroniza posições previstas com posições reais recebidas
+                m_targetX = m_posX;
+                m_targetY = m_posY;
+                m_targetZ = m_posZ;
             }
             break;
         }
@@ -240,6 +252,11 @@ void CncService::executeReset() {
     m_serial.write(&ctrlX, 1);
     
     addToLog("CTRL+X", "Comando de Soft Reset enviado", CommandResult::Success);
+    
+    // Após reset, as posições previstas são resetadas para origem
+    m_targetX = 0.0;
+    m_targetY = 0.0;
+    m_targetZ = 0.0;
 }
 
 /**

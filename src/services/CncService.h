@@ -91,6 +91,10 @@ private:
     double m_posY = 0.0;    /**< Posição atual no eixo Y. */
     double m_posZ = 0.0;    /**< Posição atual no eixo Z. */
     
+    double m_targetX = 0.0; /**< Posição prevista no eixo X. */
+    double m_targetY = 0.0; /**< Posição prevista no eixo Y. */
+    double m_targetZ = 0.0; /**< Posição prevista no eixo Z. */
+    
     /** @brief Estado atual da máquina, inicializado como Unknown. */
     MachineState m_currentState = MachineState::Unknown;
 };
